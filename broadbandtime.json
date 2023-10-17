@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {"text":"Broadband Subscriptions per 100 People"},
+    "description": "A bar chart that sorts the y-values by the x-values.",
+    "width": 470,
+    "data": {"url": "https://raw.githubusercontent.com/Elysium8/Homework_Week9/main/broadband-penetration-by-country.csv"},
+    "encoding": {
+      "y": {
+        "field": "Sub",
+        "aggregate": "mean",
+        "title": "Subscriptions per 100 People",
+        "type": "quantitative"
+      },
+      "x": {
+        "field": "Year",
+        "title": "Year",
+        "sort": "x"
+
+      },
+      "color": {"value": "#C7594B"},
+
+      "tooltip": [
+        {"field": "Year", "aggregate": "mean", "title": "Year"},
+        {"field": "Sub", "aggregate": "mean", "title": "Subscriptions per 100 People"}
+
+      ]
+    },
+    "mark":{"type": "line", "point":true}
+
+  }

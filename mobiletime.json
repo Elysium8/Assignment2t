@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Mobile Subscriptions per 100 People",
+    "description": "A bar chart that sorts the y-values by the x-values.",
+    "width": 470,
+    "data": {"url": "mobile-cellular-subscriptions-per-100-people.csv"},
+  "transform": [
+    {"filter": "datum.Year >= 1990"}
+  ],
+    "encoding": {
+      "y": {
+        "field": "mobsub",
+        "aggregate": "mean",
+        "title": "Subscriptions per 100 People",
+        "type": "quantitative"
+      },
+      "x": {
+        "field": "Year",
+        "title": "Year",
+        "sort": "x"
+
+      },
+      "color": {"value": "#0492C2"},
+
+      "tooltip": [
+        {"field": "Year", "aggregate": "mean", "title": "Year"},
+        {"field": "mobsub", "aggregate": "mean", "title": "Subscriptions per 100 People"}
+
+      ]
+    },
+    "mark":{"type": "line", "point":true}
+
+  }

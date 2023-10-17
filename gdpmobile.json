@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Gross Domestic Product vs Mobile",
+    "description": "Line Chart",
+    "width": 470,
+    "height": 250,
+    "data": {"url": "https://raw.githubusercontent.com/Elysium8/A2/main/Speedinfo.csv"},
+    "transform": [
+        
+      {
+          "lookup": "Country",
+          "from": {
+          "data": {
+          "url": "https://raw.githubusercontent.com/Elysium8/Homework_Week9/main/GDP.csv"
+          },
+          "key": "GCountry",
+          "fields": ["year"]
+          }
+    },
+    {"filter": "datum.year > 0"},
+    {"filter": "datum.mobile > 0"},
+    {"filter": "datum.year < 60000"}
+
+
+      ],
+    "mark": "point",
+    "encoding": {
+      "y": {
+        "field": "mobile",
+        "title": "Mobile Speed (Megabits per Second)",
+
+        "type": "quantitative"
+      },
+      "x": {
+        "field": "year",
+        "type": "quantitative",
+        "title": "GDP",
+        "scale": {"domain": [0, 60000]}
+
+      },
+      "color": {"value": "#0492C2"},
+      "tooltip": [
+        {"field": "Country", "title": "Country"},
+        {"field": "year", "title": "Gross Domestic Product"},
+        {"field": "mobile", "title": "Megabits Per Second"}
+
+      ]
+    }
+  }

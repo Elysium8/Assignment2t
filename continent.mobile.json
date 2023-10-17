@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {"text": "Average Mobille Speed by Continent", "fontSize": 15},
+    "description": "A bar chart that sorts the y-values by the x-values.",
+    "data": {"url": "https://raw.githubusercontent.com/Elysium8/A2/main/Speedinfo.csv"},
+    "height": {"step": 40},
+    "width": 470,
+    "transform": [    
+    {
+        "lookup": "Country",
+        "from": {
+        "data": {
+        "url": "countryContinent.csv"
+        },
+        "key": "country",
+        "fields": ["continent"]
+        }
+      },
+      {"calculate": "parseFloat(datum.mobile)", "as": "Megabits per Second"},
+      {"filter": "datum.continent != null"},
+      {"filter": "datum.mobile >0"}
+  
+      ],
+    "encoding": {
+      "y": {
+        "field": "continent",
+        "title": "Continent",
+        "type": "nominal",
+        "sort": "-x",
+        "scale": {
+          "padding": 0.4
+        }
+  
+      },
+      "x": {
+        "field": "Megabits per Second",
+        "title": "Megabits Per Second",
+        "type": "quantitative"
+      },
+      
+      "color": {"value": "#0492C2"},
+  
+      "tooltip": [
+        {"field": "Country", "type": "nominal", "title": "Country"},
+        {"field": "Megabits per Second", "type": "quantitative", "title": "Megabits Per Second"}
+      ]
+    },
+      "mark": {"type": "boxplot"} 
+  
+    
+  }

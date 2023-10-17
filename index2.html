@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@800&family=Lato:wght@300;400;900&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@600&family=Lato:wght@300;400;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="layout2.css" media="all">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <script> var spec2 = "internet_main.json";
+    vegaEmbed('#bar_chart', spec2).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    </script>
+    
+    <script> var spec2 = "barchart.json";
+        vegaEmbed('#tar_chart', spec2).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+        </script>
+
+    <script> var spec2 = "bar_mobile.json";
+        vegaEmbed('#mobile_rank', spec2).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+        </script>
+    
+    <script> var spec2 = "continent_rank.json";
+        vegaEmbed('#broadcon_rank', spec2).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+        </script>
+    <script> var spec2 = "continent.mobile.json";
+        vegaEmbed('#mobilecon_rank', spec2).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+        </script>
+
+    <script> var spec2 = "gdp.json";
+        vegaEmbed('#gdpbroad', spec2).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+        </script>
+    <script> var spec2 = "gdpmobile.json";
+        vegaEmbed('#gdpmobile', spec2).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+        </script>
+    
+    <script> var spec2 = "mobile.json";
+        vegaEmbed('#mobile_chart', spec2).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+        </script>
+    <script> var spec2 = "broadbandtime.json";
+        vegaEmbed('#broadbandt', spec2).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+        </script>
+    <script> var spec2 = "mobiletime.json";
+        vegaEmbed('#mobilet', spec2).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+        </script>
+
+
+</head>
+
+<body>
+    <div class="titlebox">
+        <h1 style="font-family: 'Handjet', sans-serif"> Global Internet Speeds</h1>
+    </div>
+
+    <div class="subtitlebox">
+        <h2> Broadband Speeds</h2>
+    </div>
+
+    <div class="box">
+            
+
+            <div id='bar_chart'>
+            </div>
+
+                <div id="tar_chart">
+                </div>
+            <div class="textbox">
+                <p style= "position:relative; bottom:385px;">
+                    This map above shows the Broadband Speeds in megabits per second, for countries around the world. It can be filtered using the continent and minimum speed filters. Broadband is defined as any internet connection that is in a fixed location, such as a home or office, and includes both wired and wireless connections. This data is taken from Ookla's Speedtest Global Index.   <br>  <br>
+                    The bar chart to the left shows the countries with the fastest average broadband speed. It's interesting to note that the two fastest countries represent two of the smallest countries by landmass. Monaco is only 2.1km² and Singapore is 728.6 km². For reference Melbourne is 9,992 km². This is likely due to the ease with which a broadband connection can be created and maintained in such a small area.
+        
+    
+                </p>
+            </div>
+            
+    </div>
+    
+    <div class="subtitlebox">
+        <h2> Broadband Statistics</h2>
+    </div>
+    <div class="statbox", style="height: 1600=px;">
+        
+        <div class="headingbox">
+            <h3> Broadband Usage Over Time</h3>
+        </div>
+        
+        <div id="broadbandt", style="left:20px">
+            
+        </div>
+        <div class="textbox", style="bottom:287px; right:40px; float: right;">
+            <p>
+                Broadband, in the form of dial up, was first invented in 1989 in the United Kingdom. However it was not commercially available until 1992 and was not considered a common commodity until the late 90's. The graph to the left shows that in 1998 there were only 0.19 broadband subscriptions per 100 people! <br>  <br>
+
+                This graph also conveys that that broadband usage has been increasingly at a steady rate since around 1988. However it is worth noting that, in 2019, there were only 16 broadband subscriptions per 100 people, a relatively small proportion of the population.
+            </p>
+        </div>
+        <div class="headingbox">
+            <h3> Comparing Continents</h3>
+        </div>
+        <div id="broadcon_rank", style="float:right; bottom: 235px;">
+        </div>
+        <div class="textbox", style="bottom:520px; float: left;">
+            <p>
+                The graph to the right shows a box and whisker plot comparison of broadband speed by continent. There are a few interesting observations we can make from this visualisation. <br>  <br>
+                Firstly, the dots on the graph represent outliers in each continent. In Africa, South Africa and Ghana represent significant upward outliers from the rest of the continent. In the Americas, two of the outliers, Canada and USA, represent the bulk of the northern part of the Americas, indicating the discrepancy between this region and southern America.<br>  <br>
+                Secondly, Europe has the highest median speeds of all the continents, but also the largest interquartile range, indicating a wide discrepancy between the fastest and slowest countries.
+            </p>
+        </div>
+        <div class="headingbox", style="position: relative; top:300px;">
+            <h3> Broadband Versus Gross Domestic Product</h3>
+        </div>        
+        <div id="gdpbroad", style="float:left; bottom:155px; right: 500px;">
+        </div>
+        <div class="textbox", style="position: absolute; bottom:68px; left: 550px; float: left;">
+            <p>
+                The scatter plot to the left shows the relationship between Gross Domestic Product (GDP) per capita and broadband speed. One immediate observation is the cluster of low GDP countries that also have slower internet speeds, generally between 0 and 50 mbps. These are generally indicative of developing nations with little access to stable broadband connections. <br>  <br>
+                Conversely, the plot shows a moderate positive association between GDP and broadband speed, with speeds of 100+ mbps being seen almost exlcusively in countries with a GDP of $15,000 or higher. <br>  <br>
+                By plotting this relationship, it becomes clear that there a large number of developing countries with low GDP's that have limited access to high speed internet.
+
+            </p>
+        </div>
+
+    </div>
+        
+
+    <div class="subtitlebox">
+        <h2> Mobile Speeds</h2>
+    </div>
+    
+
+    <div class="box">
+        <div id="mobile_chart">
+        </div>
+        <div id="mobile_rank">
+        </div>
+        <div class="textbox">
+            <p style= "position:relative; bottom:385px;">
+                This map above shows the Mobile Speeds in megabits per second, for countries around the world. It can be filtered using the continent and minimum speed filters. Mobile is defined as any internet connection that does not reside in a fixed location but rather uses a mobile connection to provide portable internet usage. Typically mobile connections are used in smartphones and other cellular devices. This data is taken from Ookla's Speedtest Global Index.   <br>  <br>
+                The bar chart to the left shows the countries with the fastest average mobile speed. Notably the countries on this ranking list have no overlap with the countries on the fastest broadband list, indicating that fast broadband speed is not neccesarily indicative of fast mobile speed.<br>  <br>
+                Another interesting note is that, in contrast to broadband speeds, the Middle East is represented three times in the list, indicating a preference for mobile internet in that region.
+
+
+
+            </p>
+        </div>
+
+    </div>
+    
+    <div class="subtitlebox">
+        <h2> Mobile Statistics</h2>
+    </div>
+    
+
+    <div class="statbox", style="height: 1600=px;">
+        
+        <div class="headingbox2">
+            <h3> Mobile Usage Over Time</h3>
+        </div>
+        
+        <div id="mobilet", style="left:20px">
+            
+        </div>
+        <div class="textbox", style="bottom:287px; right:40px; float: right;">
+            <p>
+                The graph to the left shows the increase in mobile internet usage over time. The Y axis shows number of mobile subscriptions per 100 people globally. In contrast to broadband usage, mobile usage grew more rapidly between 2000 and 2012. This growth appears to be broadly cubic, rather than linear. <br> <br>
+                The number of mobile subscriptions exceeded 100 per 100 people in 2013, indicating that the average person had more than one mobile subscription globally. In 2019, 110 mobile subscriptions per 100 people were in existence, significantly more than the 16 broadband subscriptions per 100 people. 
+
+            </p>
+        </div>
+        <div class="headingbox2">
+            <h3> Comparing Continents</h3>
+        </div>
+        <div id="mobilecon_rank", style="float:right; bottom: 235px;">
+        </div>
+        <div class="textbox", style="bottom:520px; float: left;">
+            <p> 
+                The graph to the right shows a box and whisker plot comparison of mobile speed by continent. A few notable observations arise, especially in comparison to the analysis of broadband by continent. <br><br>
+                Firstly, the bulk of the countries in the Africas continent are much more clustered. The two outliers, USA and Canada, once again delineate a discrepancy between the north and south of the continent.
+                <br><br> 
+                Secondly Europe is significantly lower across the board compared to broadband speed. Asia, Oceania and Africa perform similarly with United Arab Emirates being a significant outlier in Asia. 
+            </p>
+        </div>
+        <div class="headingbox2", style="position: relative; top:300px;">
+            <h3> Mobile Versus Gross Domestic Product</h3>
+        </div>        
+        <div id="gdpmobile", style="float:left; bottom:155px; right: 500px;">
+        </div>
+        <div class="textbox", style="position: absolute; bottom:68px; left: 550px; float: left;">
+            <p>
+                The scatter plot to the left shows the relationship between Gross Domestic Product (GDP) per capita and mobile speed. In comparison to the corresponding broadband chart, mobile speed shows stronger and more linearly associated positive association with GDP. There is generally less deviation from this association and fewer outliers. <br> <br>
+                Much like broadband, there is a clumping of countries with lower GDP's and slower mobile speeds indicating a similar relationship between economic prosperity and internet speed. <br> <br> 
+                Plotting this relationship further confirms that much of the technological development in the realm of internet is only available in more developed countries.
+            </p>
+        </div>
+
+    </div>
+</body>
+
+</html>

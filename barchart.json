@@ -1,0 +1,50 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {"text": "Fastest Speed Rankings by Country", "fontSize": 15},
+    "description": "A bar chart that sorts the y-values by the x-values.",
+    "data": {"url": "https://raw.githubusercontent.com/Elysium8/A2/main/Speedinfo.csv"},
+    "transform": [{"filter": "datum.Step > 217"}],
+    "height": {"step": 40},
+    "width": 500,
+    "encoding": {
+      "y": {
+        "field": "Country",
+        "type": "nominal",
+        "sort": "-x",
+        "scale": {
+          "padding": 0.4
+        }
+  
+      },
+      "x": {
+        "aggregate": "sum",
+        "field": "Step",
+        "title": "Megabits Per Second"
+      },
+      
+      "color": {"value": "#C7594B"},
+
+      "tooltip": [
+        {"field": "Country", "type": "nominal", "title": "Country"},
+        {"field": "Step", "type": "quantitative", "title": "Megabits Per Second"}
+      ]
+    },
+  "layer": [
+    {
+      "mark": "bar"
+  },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 3
+      },
+      "encoding": {
+        "text": {"field": "Step", "type": "quantitative"},
+        "color": {"value": "black"}
+      }
+    }
+
+  ]
+  }
